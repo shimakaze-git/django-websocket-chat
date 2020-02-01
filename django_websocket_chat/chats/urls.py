@@ -1,15 +1,12 @@
 from django.urls import path
-from django.views.generic.base import TemplateView
+# from django.views.generic.base import TemplateView
+
+from chats import views
 
 urlpatterns = [
-    path(
-        "",
-        TemplateView.as_view(template_name="room/index.html"),
-        name="room_list"
-    ),  # Room部屋
-    path(
-        "<room_id>/",
-        TemplateView.as_view(template_name="room/page.html"),
-        name="room_page"
-    ),  # Room部屋
+    path('', views.room_list, name="room_list"),
+    # Room一覧
+
+    path('<int:room_id>/', views.room_page, name='room_page'),
+    # Room部屋
 ]

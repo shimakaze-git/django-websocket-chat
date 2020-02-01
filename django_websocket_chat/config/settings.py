@@ -42,7 +42,7 @@ INSTALLED_APPS = [
 ]
 
 INSTALLED_APPS += [
-    # 'channels'
+    'channels'
 ]
 
 MIDDLEWARE = [
@@ -76,6 +76,19 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'config.wsgi.application'
+ASGI_APPLICATION = 'config.routing.application'
+CHANNEL_LAYERS = {
+    'default': {
+        # 'BACKEND': 'asgiref.inmemory.ChannelLayer',
+        # 'ROUTING': 'config.routing.channel_routing'
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [
+                ('127.0.0.1', 6379)
+            ],
+        },
+    },
+}
 
 
 # Database
