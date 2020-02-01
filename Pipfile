@@ -8,6 +8,7 @@ verify_ssl = true
 [packages]
 django = "==3.0.2"
 channels = "==2.4.0"
+channels-redis = "==2.4.1"
 
 [requires]
 python_version = "3.7"
