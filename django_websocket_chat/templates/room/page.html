@@ -6,8 +6,12 @@
     <meta charset="utf-8">
     <title></title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    {% comment %} <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> {% endcomment %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/notifier.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="{% static 'js/main.js' %}"></script>
   </head>
   <body>
     <div class="container">
@@ -46,8 +50,26 @@
       <!-- ここにコンテンツ -->
 
       <div class="contents">
+        <div id="form" class="form">
+          <form class="form-inline">
+            <fieldset>
+              <label>
+                Name:
+                <input type="text" id="name" maxlength="10" class="form-control">
+              </label>
+              <label>
+                Message:
+                <input type="text" id="message" class="form-control">
+              </label>
+              <button id="submit" class="btn btn-primary">Submit</button>
+            </fieldset>
+          </form>
+        </div>
+        <div id="log" class="log">
+        </div>
         CODEPREPの新しいメニューを再発明してみた
       </div>
+
     </div>
   </body>
 </html>
